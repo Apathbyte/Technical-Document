@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>PHP Documentation</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>PHP Documentation</header>
+    <ul>
+    <li><a class="nav-link" href="#Introduction_to_PHP">Introduction to PHP</a></li>
+    <li><a class="nav-link" href="#Installing_PHP">Installing PHP</a></li>
+    <li><a class="nav-link" href="#PHP_Syntax">PHP Syntax</a></li>
+    <li><a class="nav-link" href="#PHP_Magic_Constants">PHP Magic Constants</a></li>
+    <li><a class="nav-link" href="#PHP_Loops">PHP Loops</a></li>
+    <li><a class="nav-link" href="#PHP_If...Else">PHP If...Else</a></li>
+    <li><a class="nav-link" href="#PHP_Object-Oriented_Programming_(OOP)">PHP Object-Oriented Programming (OOP)</a></li>
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section id="Introduction_to_PHP" class="main-section">
+      <header>Introduction to PHP</header>
+      <p>PHP, which stands for "Hypertext Preprocessor," is a widely used server-side scripting language that is particularly well-suited for web development. Originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994, PHP has since evolved into a powerful and versatile tool for building dynamic websites and web applications.</p>
+<p>
+One of PHP's key strengths is its seamless integration with HTML, making it easy for developers to embed PHP code directly within HTML pages. This allows for the dynamic generation of content, such as retrieving data from a database, processing user input, or performing calculations, and then displaying the results on the webpage.</p>
+    </section>
+    <section id="Installing_PHP" class="main-section">
+      <header>Installing PHP</header>
+      <p>To start using PHP, you have a few options:</p>
+
+<h4>1. Use a Web Host with PHP Support:</h4>
+<ul>
+  <li>If your web host supports PHP, you can simply create PHP files, place them in your web directory, and the server will automatically parse them for you.</li>
+  <li>Most web hosts offer PHP support since PHP is free to use.</li>
+</ul>
+
+<h4>2. Set Up PHP on Your Own PC:</h4>
+<ul>
+  <li>If your server does not support PHP, you can set it up on your own PC by following these steps:</li>
+  <li>Install a web server: You'll need to install software like Apache or Nginx to serve your PHP files.</li>
+  <li>Install PHP: Download and install PHP on your PC. The official PHP website provides installation instructions.</li>
+  <li>Install a database: If your application requires a database, such as MySQL, you'll need to install and configure it on your PC as well.</li>
+</ul>
+
+<h4>3. Use an Online PHP Compiler/Editor:</h4>
+<ul>
+  <li>Websites like W3Schools offer online PHP compilers/editors where you can write PHP code directly in your browser.</li>
+  <li>These platforms allow you to edit PHP code and instantly view the result in your browser without needing to set up a server environment on your PC.</li>
+</ul>
+    </section>
+    <section id="PHP_Syntax" class="main-section">
+      <header>PHP Syntax</header>
+      <h4>Basic PHP Syntax:</h4>
+<p>A PHP script starts with <code>&lt;?php</code> and ends with <code>?&gt;</code>.</p>
+<p>The default file extension for PHP files is <code>.php</code>.</p>
+<p>A PHP file normally contains HTML tags and some PHP scripting code.</p>
+
+<h4>Example of a Simple PHP File:</h4>
+<p>A simple PHP file with both HTML code and PHP code:</p>
+<pre>
+<code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My first PHP page&lt;/h1&gt;
+
+&lt;?php
+echo "Hello World!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+<p>Note: PHP statements end with a semicolon (<code>;</code>).</p>
+
+<h4>PHP Case Sensitivity:</h4>
+<p>In PHP, keywords (e.g., if, else, while, echo, etc.), classes, functions, and user-defined functions are not case-sensitive.</p>
+<p>However, all variable names are case-sensitive.</p>
+<p>Example demonstrating case sensitivity:</p>
+<pre>
+<code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;?php
+$color = "red";
+echo "My car is " . $color . "&lt;br&gt;";
+echo "My house is " . $COLOR . "&lt;br&gt;";
+echo "My boat is " . $coLOR . "&lt;br&gt;";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+    </section>
+    <section id="PHP_Magic_Constants" class="main-section">
+      <header>PHP Magic Constants</header>
+      <table>
+  <tr>
+    <th>Constant</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>__CLASS__</td>
+    <td>If used inside a class, the class name is returned.</td>
+    <td><code>echo __CLASS__;</code></td>
+  </tr>
+  <tr>
+    <td>__DIR__</td>
+    <td>The directory of the file.</td>
+    <td><code>echo __DIR__;</code></td>
+  </tr>
+  <tr>
+    <td>__FILE__</td>
+    <td>The file name including the full path.</td>
+    <td><code>echo __FILE__;</code></td>
+  </tr>
+  <tr>
+    <td>__FUNCTION__</td>
+    <td>If inside a function, the function name is returned.</td>
+    <td><code>echo __FUNCTION__;</code></td>
+  </tr>
+  <tr>
+    <td>__LINE__</td>
+    <td>The current line number.</td>
+    <td><code>echo __LINE__;</code></td>
+  </tr>
+  <tr>
+    <td>__METHOD__</td>
+    <td>If used inside a function that belongs to a class, both class and function name is returned.</td>
+    <td><code>echo __METHOD__;</code></td>
+  </tr>
+  <tr>
+    <td>__NAMESPACE__</td>
+    <td>If used inside a namespace, the name of the namespace is returned.</td>
+    <td><code>echo __NAMESPACE__;</code></td>
+  </tr>
+  <tr>
+    <td>__TRAIT__</td>
+    <td>If used inside a trait, the trait name is returned.</td>
+    <td><code>echo __TRAIT__;</code></td>
+  </tr>
+  <tr>
+    <td>ClassName::class</td>
+    <td>Returns the name of the specified class and the name of the namespace, if any.</td>
+    <td><code>echo ClassName::class;</code></td>
+  </tr>
+</table>
+    </section>
+      </section>
+    <section id="PHP_If...Else" class="main-section">
+      <header>PHP If...Else</header>
+      <h4>PHP Conditional Statements</h4>
+
+<p>Very often when you write code, you want to perform different actions for different conditions. You can use conditional statements in your code to do this.</p>
+
+<p>In PHP, we have the following conditional statements:</p>
+
+<ul>
+  <li><strong>if statement:</strong> executes some code if one condition is true.</li>
+  <li><strong>if...else statement:</strong> executes some code if a condition is true and another code if that condition is false.</li>
+  <li><strong>if...elseif...else statement:</strong> executes different codes for more than two conditions.</li>
+  <li><strong>switch statement:</strong> selects one of many blocks of code to be executed.</li>
+</ul>
+
+<p>Below are the basic syntaxes for these conditional statements:</p>
+
+<h3>if Statement:</h3>
+<pre>
+<code>
+if (condition) {
+  // code to be executed if condition is true;
+}
+</code>
+</pre>
+
+<h3>if...else Statement:</h3>
+<pre>
+<code>
+if (condition) {
+  // code to be executed if condition is true;
+} else {
+  // code to be executed if condition is false;
+}
+</code>
+</pre>
+
+<h4>if...elseif...else Statement:</h4>
+<pre>
+<code>
+if (condition1) {
+  // code to be executed if condition1 is true;
+} elseif (condition2) {
+  // code to be executed if condition2 is true;
+} else {
+  // code to be executed if all conditions are false;
+}
+</code>
+</pre>
+
+<h4>switch Statement:</h4>
+<pre>
+<code>
+switch (variable) {
+  case value1:
+    // code to be executed if variable is equal to value1;
+    break;
+  case value2:
+    // code to be executed if variable is equal to value2;
+    break;
+  ...
+  default:
+    // code to be executed if variable is different from all the above values;
+}
+</code>
+</pre>
+    <section id="PHP_Loops" class="main-section">
+      <header>PHP Loops</header>
+      <h4>PHP Loops</h4>
+
+<p>Oftentimes when you write code, you want the same block of code to run over and over again a certain number of times. So, instead of adding several almost equal code-lines in a script, we can use loops.</p>
+
+<p>Loops are used to execute the same block of code again and again, as long as a certain condition is true.</p>
+
+<p>In PHP, we have the following loop types:</p>
+
+<ul>
+  <li><strong>while:</strong> loops through a block of code as long as the specified condition is true.</li>
+  <li><strong>do...while:</strong> loops through a block of code once and then repeats the loop as long as the specified condition is true.</li>
+  <li><strong>for:</strong> loops through a block of code a specified number of times.</li>
+  <li><strong>foreach:</strong> loops through a block of code for each element in an array.</li>
+</ul>
+
+<p>Below are the basic syntaxes for these loop types:</p>
+
+<h4>while Loop:</h4>
+<pre>
+<code>
+while (condition) {
+  // code to be executed as long as the condition is true;
+}
+</code>
+</pre>
+
+<h3>do...while Loop:</h3>
+<pre>
+<code>
+do {
+  // code to be executed at least once, and then repeats the loop as long as the condition is true;
+} while (condition);
+</code>
+</pre>
+
+<h4>for Loop:</h4>
+<pre>
+<code>
+for (initialization; condition; increment/decrement) {
+  // code to be executed for each iteration of the loop;
+}
+</code>
+</pre>
+
+<h4>foreach Loop:</h4>
+<pre>
+<code>
+foreach ($array as $value) {
+  // code to be executed for each element in the array;
+}
+</code>
+</pre>
+    </section>
+    <section id="PHP_Object-Oriented_Programming_(OOP)" class="main-section">
+      <header>PHP Object-Oriented Programming (OOP)</header>
+      <h4>PHP Object-Oriented Programming (OOP)</h4>
+
+<p>From PHP 5 onwards, you can also write PHP code in an object-oriented style.</p>
+
+<h4>What is OOP?</h4>
+<p>OOP stands for Object-Oriented Programming.</p>
+<p>Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.</p>
+
+<p>Object-oriented programming has several advantages over procedural programming:</p>
+<ul>
+  <li>OOP is faster and easier to execute.</li>
+  <li>OOP provides a clear structure for the programs.</li>
+  <li>OOP helps to keep the PHP code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify, and debug.</li>
+  <li>OOP makes it possible to create full reusable applications with less code and shorter development time.</li>
+</ul>
+
+<p><strong>Tip:</strong> The "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. You should extract out the codes that are common for the application, and place them at a single place and reuse them instead of repeating it.</p>
+
+<h4>What are Classes and Objects?</h4>
+<p>Classes and objects are the two main aspects of object-oriented programming.</p>
+<h4>PHP Object-Oriented Programming (OOP) Examples</h4>
+
+<h4>Example 1: Class Declaration</h4>
+<pre>
+<code>
+class Car {
+  // Properties
+  public $brand;
+  public $model;
+  
+  // Methods
+  public function drive() {
+    return "The {$this->brand} {$this->model} is driving.";
+  }
+}
+</code>
+</pre>
+
+<h4>Example 2: Object Instantiation</h4>
+<pre>
+<code>
+// Create an instance of the Car class
+$myCar = new Car();
+
+// Set object properties
+$myCar->brand = "Toyota";
+$myCar->model = "Camry";
+</code>
+</pre>
+
+<h4>Example 3: Accessing Properties and Methods</h4>
+<pre>
+<code>
+// Accessing object properties
+echo "My car is a {$myCar->brand} {$myCar->model}.<br>";
+
+// Accessing object methods
+echo $myCar->drive();
+</code>
+</pre>
+    </section>
+    <section id="Reference" class="main-section">
+      <header>Reference</header>
+      <p>This document is taken from<a href="https://www.w3schools.com/php/default.asp"> W3School PHP</p>
+    </section>
+  </main>
+</body>
+</html>
